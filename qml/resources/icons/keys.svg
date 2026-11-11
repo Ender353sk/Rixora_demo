@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Головка ключа -->
+  <circle cx="18" cy="18" r="7" stroke="#66FCF1" stroke-width="2.5" fill="none"/>
+  <circle cx="18" cy="18" r="2.5" fill="#FFFFFF"/>
+  <!-- Стержень -->
+  <path d="M24.5 22.5L34 32" stroke="#66FCF1" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Зубцы -->
+  <path d="M29 27.5L31.5 25" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M31.5 30L34 27.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

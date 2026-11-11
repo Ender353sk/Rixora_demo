@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Крышка -->
+  <path d="M16 16H32M20 16V13.5C20 12.7 20.7 12 21.5 12H26.5C27.3 12 28 12.7 28 13.5V16" 
+        stroke="#cc0202" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <!-- Корпус -->
+  <path d="M18 16L19.2 33C19.3 34.1 20.2 35 21.3 35H26.7C27.8 35 28.7 34.1 28.8 33L30 16" 
+        stroke="#cc0202" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <!-- Внутренние линии -->
+  <line x1="22" y1="21" x2="22" y2="30" stroke="#cc0202" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="26" y1="21" x2="26" y2="30" stroke="#cc0202" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

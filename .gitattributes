@@ -1,0 +1,28 @@
+# По умолчанию все текстовые файлы → LF
+* text=auto eol=lf
+
+# Явно указываем исходники
+*.cpp text eol=lf
+*.h text eol=lf
+*.hpp text eol=lf
+*.c text eol=lf
+*.qml text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf
+
+# Бинарные и специальные файлы (чтобы Git их не трогал)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.dll binary
+*.exe binary
+*.so binary
+*.dylib binary
+*.onnx binary
+*.bin binary
+*.model binary

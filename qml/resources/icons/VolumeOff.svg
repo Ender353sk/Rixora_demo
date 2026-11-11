@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Динамик (приглушённый) -->
+  <path d="M13 20H17.5L24 14V34L17.5 28H13V20Z" fill="#3A6B68"/>
+  <path d="M28 17C29.8 19 30.8 21.3 30.8 24C30.8 26.7 29.8 29 28 31" stroke="#3A6B68" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M32.5 13C35.5 16.2 37.2 19.9 37.2 24C37.2 28.1 35.5 31.8 32.5 35" stroke="#3A6B68" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Красная перечёркивающая линия -->
+  <line x1="12" y1="36" x2="36" y2="12" stroke="#FF4D4D" stroke-width="3.2" stroke-linecap="round"/>
+</svg>

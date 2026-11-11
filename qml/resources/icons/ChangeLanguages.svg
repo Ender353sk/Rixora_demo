@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Два речевых пузыря -->
+  <path d="M12 16C12 13.8 13.8 12 16 12H22C24.2 12 26 13.8 26 16V22C26 24.2 24.2 26 22 26H18L14 30V26H16C13.8 26 12 24.2 12 22V16Z" 
+        stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+  <path d="M22 22C22 19.8 23.8 18 26 18H32C34.2 18 36 19.8 36 22V28C36 30.2 34.2 32 32 32H28L24 36V32H26C23.8 32 22 30.2 22 28V22Z" 
+        stroke="#66FCF1" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+  <!-- Буквы -->
+  <text x="16.5" y="21.5" font-size="8" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="600">A</text>
+  <text x="27.5" y="27.5" font-size="8" fill="#66FCF1" font-family="Arial, sans-serif" font-weight="600">文</text>
+</svg>

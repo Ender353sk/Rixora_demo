@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Пузырь с хвостиком снизу -->
+  <path d="M14 14H28C31.3 14 34 16.7 34 20V28C34 31.3 31.3 34 28 34H27V40L19 34H14C10.7 34 8 31.3 8 28V20C8 16.7 10.7 14 14 14Z"
+        fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Бейдж с плюсом -->
+  <circle cx="35" cy="13" r="7" fill="#66FCF1"/>
+  <path d="M35 9.5V16.5M31.5 13H38.5" stroke="#0B0C10" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

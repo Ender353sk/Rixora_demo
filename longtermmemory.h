@@ -12,26 +12,28 @@
 #include "longtermmemorycore.h"
 #include "memorytypes.h"
 
-class LongTermMemoryPersistence;
 class MemorySearch;
+class SqliteMemoryRepository;
 
-// Глобальная (кросс-чатовая) долгосрочная память Риксоры.
+// Глобальна (кросс-чатова) довгострокова пам'ять Риксори.
 //
-// Память хранит сырые факты, каждый из которых жёстко привязан к chatId и
-// сообщению-источнику msgId. Удаление чата или сообщения вырезает только
-// относящиеся к ним факты, не затрагивая остальные.
+// Память хранит сирі факти, кожен з яких жорстко привязаний до chatId і
+// повідомлення-джерела msgId. Видалення чату або повідомлення вириває лише
+// відносяться до них факти, не зачікаючи решта.
 //
-// Рост памяти ограничен: дедупликация при добавлении, жёсткий потолок
-// MAX_TOTAL фактов и дневной лимит API-вызовов на извлечение.
+// Зростання пам'яті обмежене: дедукція при додаванні, жорсткий потолок
+// MAX_TOTAL фактів і денний ліміт API-викликів на вилучення.
 //
-// Поиск гибридный: векторная близость, лексический индекс, свежесть и
-// переранжировка с разнообразием (MMR).
+// Пошук гібридний: векторна близость, лексичний індекс, свіжість і
+// переранжування з різноманіттям (MMR).
+//
+// Персистентність тепер через SQLite (SqliteMemoryRepository), а не через
+// двійкові файли LongTermMemoryPersistence.
 class LongTermMemory : public QObject
 {
     Q_OBJECT
-
 public:
-    explicit LongTermMemory(QObject *parent = nullptr);
+    explicit LongTermMemory(SqliteMemoryRepository *repository = nullptr, QObject *parent = nullptr);
     ~LongTermMemory() override;
 
     static constexpr int MAX_TOTAL = LongTermMemoryCore::MAX_TOTAL;
@@ -71,11 +73,14 @@ public:
     QHash<QString, int> scannedChatMsgs() const;
     void saveBackfillCursor(int index, const QHash<QString, int> &scanned);
 
+    SqliteMemoryRepository *repository() const { return m_repository; }
+
 private:
     BM25Index m_index;
     std::unique_ptr<LongTermMemoryCore> m_core;
-    std::unique_ptr<LongTermMemoryPersistence> m_persistence;
     std::unique_ptr<MemorySearch> m_search;
+    SqliteMemoryRepository *m_repository;
+    bool m_ownsRepository = false;
 };
 
 #endif // LONGTERMMEMORY_H

@@ -1,12 +1,23 @@
 #include "networkmanager.h"
+#include "sqlitememoryrepository.h"
 #include <QUrl>
 #include <QClipboard>
 
 NetworkManager::NetworkManager(QObject *parent)
     : QObject(parent),
+      m_repository(new SqliteMemoryRepository(this)),
+      m_config(),
+      m_memoryManager(),
+      m_audioEngine(),
+      m_chatManager(m_repository, this),
+      m_longTerm(m_repository, this),
       m_geminiApi(m_config, m_memoryManager, m_chatManager, m_longTerm),
       m_speechApi(m_audioEngine)
 {
+    if (!m_repository->initialize()) {
+        qDebug() << "[NetworkManager] Помилка ініціалізації SQLite репозиторію.";
+    }
+
     m_orchestrator = std::make_unique<MemoryOrchestrator>(
         m_longTerm, m_memoryManager, m_chatManager, m_config, m_nam, this);
     m_actions = std::make_unique<MessageActions>(

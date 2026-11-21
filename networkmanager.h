@@ -19,6 +19,8 @@
 #include "messageactions.h"
 #include "chatpersistence.h"
 
+class SqliteMemoryRepository;
+
 class NetworkManager : public QObject
 {
     Q_OBJECT
@@ -96,11 +98,9 @@ private:
     QNetworkAccessManager m_nam;
 
     // Subsystems (owned)
-    // ПОРЯДОК ОБЪЯВЛЕНИЯ ВАЖЕН и должен совпадать с порядком в списке
-    // инициализации конструктора: m_speechApi(m_audioEngine) получает ССЫЛКУ,
-    // поэтому m_audioEngine обязан быть сконструирован раньше m_speechApi.
-    // AudioEngine больше не эмитит сигналы из деструктора, поэтому порядок
-    // разрушения больше не накладывает ограничений.
+    // ПОРЯДОК ОБЪЯВЛЕНИЯ ВАЖЕН: m_repository має бути створений раніше за
+    // m_chatManager і m_longTerm, бо їхні конструктори отримують на нього посилання.
+    SqliteMemoryRepository *m_repository;
     ApiConfigManager m_config;
     MemoryManager m_memoryManager;
     AudioEngine m_audioEngine;

@@ -5,7 +5,7 @@ project(RixoraAI VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Подключаем Qt модули, включая Concurrent для фонового синтеза
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2 Network Multimedia Concurrent Svg)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2 Network Multimedia Concurrent Svg Sql)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -61,6 +61,8 @@ add_library(RixoraCore STATIC
     longtermmemorypersistence.cpp
     memorysearch.h
     memorysearch.cpp
+    sqlitememoryrepository.h
+    sqlitememoryrepository.cpp
     longtermmemorycore.h
     longtermmemorycore.cpp
     memorytypes.h
@@ -84,6 +86,7 @@ target_link_libraries(RixoraCore PRIVATE
     Qt6::Multimedia
     Qt6::Concurrent
     Qt6::Test
+    Qt6::Sql
 )
 
 target_link_directories(RixoraCore PRIVATE ${SHERPA_ONNX_DIR}/lib)

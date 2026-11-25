@@ -174,7 +174,10 @@ Window {
             // getCurrentChatId() уже не вернёт прежний id.
             var wasCurrent = chatManager.getCurrentChatId() === chatId
             chatManager.deleteChat(chatId)
-            chatScreen.refreshChatHistory()
+            // refreshChatHistory() вызывается автоматически через сигнал chatListChanged
+            // из ChatPersistence -> NetworkManager -> ChatStore. Явный вызов здесь
+            // создавал двойную (а при смене чата — тройную) перестройку модели истории,
+            // что приводило к зависанию/крашу ListView.
             if (wasCurrent) {
                 chatScreen.startNewChat()
             }

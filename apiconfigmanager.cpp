@@ -73,13 +73,13 @@ void ApiConfigManager::setSpeechLanguageAuto(bool on) {
 }
 
 QString ApiConfigManager::getGreeting() const {
-    if (m_currentLanguage == "en") return "Hello! I am Rixora. What shall we talk about?)";
-    if (m_currentLanguage == "es") return "¡Hola! Soy Rixora. ¿De qué vamos a hablar?)";
-    if (m_currentLanguage == "ko") return "안녕하세요! 저는 릭소라입니다. 무슨 이야기를 나눌까요?)";
-    if (m_currentLanguage == "de") return "Hallo! Ich bin Rixora. Worüber sollen wir sprechen?)";
-    if (m_currentLanguage == "uk") return "Привіт! Я Ріксора. Про що поговоримо?)";
-    if (m_currentLanguage == "fr") return "Bonjour ! Je suis Rixora. De quoi allons-nous parler ?)";
-    if (m_currentLanguage == "ja") return "こんにちは！リクソラです。何について話しましょうか？)";
+    if (m_currentLanguage == "en") return "Hello! I am Rixora. What shall we talk about?";
+    if (m_currentLanguage == "es") return "¡Hola! Soy Rixora. ¿De qué vamos a hablar?";
+    if (m_currentLanguage == "ko") return "안녕하세요! 저는 릭소라입니다. 무슨 이야기를 나눌까요?";
+    if (m_currentLanguage == "de") return "Hallo! Ich bin Rixora. Worüber sollen wir sprechen?";
+    if (m_currentLanguage == "uk") return "Привіт! Я Ріксора. Про що поговоримо?";
+    if (m_currentLanguage == "fr") return "Bonjour ! Je suis Rixora. De quoi allons-nous parler ?";
+    if (m_currentLanguage == "ja") return "こんにちは！リクソラです。何について話しましょうか？";
 
     return "Привет! Я Риксора. О чём поговорим?";
 }
